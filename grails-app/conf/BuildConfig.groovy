@@ -11,9 +11,10 @@ grails.project.dependency.resolution = {
 
 	log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 	repositories {
+		inherits true
 		grailsPlugins()
 		grailsHome()
-
+		grailsCentral()
 		// uncomment the below to enable remote dependency resolution
 		// from public Maven repositories
 		mavenLocal()
@@ -26,9 +27,13 @@ grails.project.dependency.resolution = {
 
 	dependencies {
 		// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-		compile(group: 'org.apache.poi', name: 'poi', version: '3.8');
-		//xlxs file support
-		compile(group: 'org.apache.poi', name: 'poi-ooxml', version: '3.8') {
+		compile(group: 'org.apache.poi', name: 'poi', version: '3.11');
+		//xlsx file support
+		compile(group: 'org.apache.poi', name: 'poi-ooxml', version: '3.11') {
+			excludes 'xmlbeans'
+		}
+		//xlsx schemas support
+		compile(group: 'org.apache.poi', name: 'ooxml-schemas', version: '1.1') {
 			excludes 'xmlbeans'
 		}
 		//compile group:'org.apache.poi', name:'poi-contrib', version:'3.7'
@@ -36,11 +41,12 @@ grails.project.dependency.resolution = {
 	}
 
 	plugins {
+		compile ":joda-time:1.5"
 		build ":release:3.0.1"
-		build ":tomcat:7.0.53"
+		build ":tomcat:7.0.54"
 
-		compile ':hibernate:3.6.10.15' {
-			export = false
-		}
+		// compile ':hibernate:3.6.10.15' {
+		// 	export = false
+		// }
 	}
 }

@@ -363,7 +363,13 @@ public class ExcelImportService {
 			return propertyConfiguration?.defaultValue?:null
 		}
 
-		switch (cell.cellType) {
+		int cellType = cell.getCellType()
+		if (cellType == Cell.CELL_TYPE_FORMULA) {
+			cellType = cell.getCachedFormulaResultType()
+            log.info "set cachedFormulaResultType=${cellType} for cell row=${cell.rowIndex} column=${cell.columnIndex}"
+		}
+
+		switch (cellType) {
 			case Cell.CELL_TYPE_STRING:
 				//println "string cell $origcell"
 				//println "string cell propertyConfig $propertyConfiguration"
