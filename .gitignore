@@ -2,3 +2,4 @@ target/
 build/
 *.zip
 *.sha1
+.gradle/
