@@ -11,7 +11,7 @@ grails.project.dependency.resolution = {
 
 	log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 	repositories {
-		inherits true
+		inherits 'global'
 		grailsPlugins()
 		grailsHome()
 		grailsCentral()
@@ -38,13 +38,14 @@ grails.project.dependency.resolution = {
 		}
 		//compile group:'org.apache.poi', name:'poi-contrib', version:'3.7'
 		//compile group:'org.apache.poi', name:'poi-scratchpad', version:'3.7' //ppt, word, visio, outlook support
+		compile(group: 'commons-io', name: 'commons-io', version:'1.4')
 	}
 
 	plugins {
 		compile ":joda-time:1.5"
-		build ":release:3.0.1"
+		build ":release:3.1.1"
 		build ":tomcat:7.0.54"
-
+		build ":migrate2-grails3:0.3.2"
 		// compile ':hibernate:3.6.10.15' {
 		// 	export = false
 		// }
