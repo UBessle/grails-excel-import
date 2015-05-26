@@ -61,6 +61,16 @@ dependencies {
     provided "org.grails:grails-dependencies"
     provided 'javax.servlet:javax.servlet-api:3.1.0'
 
+    compile 'org.apache.poi:poi:3.11'
+    //xlsx file support
+    compile 'org.apache.poi:poi-ooxml:3.11'
+    //xlsx schemas support
+    compile 'org.apache.poi:ooxml-schemas:1.1'
+    //compile 'org.apache.poi:poi-contrib:3.11'
+    //compile 'org.apache.poi:poi-scratchpad:3.11' //ppt, word, visio, outlook support
+    compile 'commons-io:commons-io:1.4'
+    compile 'joda-time:joda-time:1.5'
+
     testCompile "org.grails:grails-plugin-testing"
 
     console "org.grails:grails-console"
