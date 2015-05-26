@@ -1,4 +1,4 @@
-package grails.excel.import
+package grails.plugin.excelImport
 
 import grails.plugins.*
 
