@@ -2,9 +2,9 @@ package grails.excel.import
 
 import grails.plugins.*
 
-class GrailsExcelImportGrailsPlugin extends Plugin {
+class ExcelImportGrailsPlugin extends Plugin {
     // the plugin version
-    def version = "1.0.5"
+    def version = "2.0.0"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.4 > *"
     // the other plugins this plugin depends on
@@ -15,23 +15,23 @@ class GrailsExcelImportGrailsPlugin extends Plugin {
     ]
 
     // TODO Fill in these fields
-    def author = "Jean Barmash, Oleksiy Symonenko"
+    def author = "Uwe Bessle / Jean Barmash, Oleksiy Symonenko"
 
-    def authorEmail = "Jean.Barmash@gmail.com"
+    def authorEmail = "Uwe.Bessle@gmail.com"
     def title = "Excel, Excel 2007 & CSV Importer Using Apache POI"
     def description = '''\\
-	Excel-Import plugin uses Apache POI [http://poi.apache.org/] library (v 3.6) to parse Excel files.  
+	Excel-Import plugin uses Apache POI [http://poi.apache.org/] library (v 3.11) to parse Excel files.  
       	It's useful for either bootstrapping data, or when you want to allow your users to enter some data using Excel spreadsheets. 
 '''
 
 	def license = "APACHE"
-	def organization = [ name: "EnergyScoreCards.com", url: "http://www.energyscorecards.com/" ]
+	def organization = [ name: "iteratec.de", url: "http://www.iteratec.de/" ]
 	def developers = [
-        	[ name: "Oleksiy Symonenko", email: "" ],
+        	[ name: "Uwe Bessle", email: "Uwe.Bessle@iteratec.de" ],
 	]
 
 	def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPXLIMPORT" ]
-	def scm = [ url: "https://github.com/jbarmash/grails-excel-import" ]
+	def scm = [ url: "https://github.com/UBessle/grails-excel-import" ]
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/excel-import"
 
