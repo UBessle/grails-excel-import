@@ -458,6 +458,7 @@ public class ExcelImportService {
 			case Cell.CELL_TYPE_NUMERIC:
 				//println "numeric cell $origcell"
 				if (propertyConfiguration?.expectedType == StringType) {
+					log.info "${getCellAddresString(cell)} Potential issue - expected cell type is String but current cell type is numeric with cell style = ${cell.cellStyle.dataFormatString} "
 					cell.setCellType(Cell.CELL_TYPE_STRING);
 					return cell.stringCellValue
 				}
